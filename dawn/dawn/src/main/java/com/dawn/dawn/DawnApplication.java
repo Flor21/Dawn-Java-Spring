@@ -20,13 +20,14 @@ public class DawnApplication {
 		SpringApplication.run(DawnApplication.class, args);
 	}
 	
+	/*@SuppressWarnings("deprecation")
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurerAdapter() {
 			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("*");
-			}
-		};
-	}
+			public void addCorsMappings(CorsRegistry registry) { */
+				//registry.addMapping("*/*").allowedOrigins("*");
+		//	}
+		//};
+	//}
 }

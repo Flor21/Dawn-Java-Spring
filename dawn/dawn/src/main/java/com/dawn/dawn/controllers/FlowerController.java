@@ -19,12 +19,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class FlowerController {
 	private FlowerRepository repository;
 	
-	@PostMapping()
+	  FlowerController(FlowerRepository repository) {
+		    this.repository = repository;
+		  }
+
+	@PostMapping(path="/addFlower")
 	public ResponseEntity<Flower> create(@Valid @RequestBody Flower createRequest) {
-		return ResponseEntity.ok(repository.save(createRequest));
+		System.out.println(this.repository);
+		@Valid
+		Flower x = this.repository.save(createRequest);
+		return ResponseEntity.ok(x);
 	}
 	
-	@GetMapping()
+	@GetMapping("/")
 	List<Flower> all() {
 		return repository.findAll();
 	}

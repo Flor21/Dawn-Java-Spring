@@ -2,6 +2,7 @@ version: "3.7"
 services:
   mysql:
     image: mysql:5.7
+    container_name: 'mysql_dawn_java'
     restart: always
     environment:
       MYSQL_DATABASE: 'db_dawn_java'
@@ -9,8 +10,8 @@ services:
       MYSQL_PASSWORD: 'dawnjava'
       MYSQL_ROOT_PASSWORD: 'dawnjava'
     ports:
-     - "3307:3306"
+      - "3337:3306"
     expose:
-    - "3306"
+      - "3306"
     volumes:
-     - ./mysql:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
